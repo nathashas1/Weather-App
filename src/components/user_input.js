@@ -3,7 +3,6 @@ const Form = ({weather}) => {
   return (
       <form onSubmit={weather}>
         <input type="text" name="city" placeholder="City..." />
-        <input type="text" name="country" placeholder="Country..." />
         <button>Get Weather</button>
       </form>
   )
