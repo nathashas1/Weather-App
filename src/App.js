@@ -3,7 +3,7 @@ import Titles from './components/title';
 import UserInput from './components/user_input';
 import Weather from './components/weather';
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 //
 
 
@@ -44,7 +44,7 @@ class App extends React.Component {
           predictability: weather_details.predictability,
           error: undefined
         })
-      } else { 
+      } else {
         this.setState({error: "City does not exist"})
       }
 
@@ -56,20 +56,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Titles />
-        <UserInput weather={this.weather} />
-        <Weather city={this.state.city}
-                 maxtemp={this.state.max_temp}
-                 mintemp={this.state.min_temp}
-                 humidity={this.state.humidity}
-                 weatherstateabbr={this.state.weather_state_abbr}
-                 windspeed={this.state.wind_speed}
-                 predictability={this.state.predictability}
-                 error={this.state.error}
-
-          />
-      </div>
+        <div className="background">
+          <Titles />
+          <UserInput weather={this.weather} />
+          <Weather city={this.state.city}
+                   maxtemp={this.state.max_temp}
+                   mintemp={this.state.min_temp}
+                   humidity={this.state.humidity}
+                   weatherstateabbr={this.state.weather_state_abbr}
+                   windspeed={this.state.wind_speed}
+                   predictability={this.state.predictability}
+                   error={this.state.error}
+            />
+        </div>
     );
   }
 }
