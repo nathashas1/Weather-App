@@ -4,29 +4,200 @@
 
 
 .background{
-  /* background-image: url(./images/images.jpeg);
-  min-height: 100vh;
+  background-image: url(./images/4.jpg);
   background-repeat: no-repeat;
-  display: flex; */
-
-  background-image: url(./images/images.jpeg);
-  background-repeat: no-repeat;
-  /* background-size: cover; */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-size: 100%;
   justify-content: center;
   z-index: -1;
-align-items: center;
+  align-items: center;
 }
 
-.container{
-  /* display: flex;
+.background-result{
+  background-repeat: no-repeat;
+  display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%; */
+  height: 100vh;
+  background-size: 100%;
+  justify-content: center;
+  z-index: -1;
+  align-items: center;
+  background-color: #28699E;
+}
 
+.background-result-c{
+  background-image: url(./images/c.jpg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+}
+
+
+.background-result-h{
+  background-image: url(./images/c.jpg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+}
+
+.background-result-hc{
+  background-image: url(./images/c.jpg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+}
+
+.background-result-hr{
+  background-image: url(./images/hr.jpg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+.background-result-lc{
+  background-image: url(./images/lc.png);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+
+.background-result-lr{
+  background-image: url(./images/lr.jpeg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+.background-result-sl{
+  background-image: url(./images/sl.jpeg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+.background-result-sn{
+  background-image: url(./images/sn.jpg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+.background-result-s{
+  background-image: url(./images/lr.jpeg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+.background-result-t{
+  background-image: url(./images/t.jpeg);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
+
+
+
+.userInput{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.input{
+  width:300px;
+  height:20px;
+  margin-bottom: 50px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+input::placeholder{
+  font-size: 20px;
+}
+
+.submit{
+  width:200px;
+  height:35px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.submit2{
+  width:200px;
+  height:35px;
+  border-radius: 4px;
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+.submit2:hover {
+    background-color: #2167A3;
+    color: white;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+
+.submit:hover {
+    background-color: #2167A3;
+    color: white;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+
+.error{
+  color: red;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+.container{
   display: flex;
   height: 100%;
   background-image: url(./images/images.jpeg);
@@ -34,6 +205,20 @@ align-items: center;
   background-size: 100%;
   justify-content: center;
   z-index: -1;
+}
+
+.weather{
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.result-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;

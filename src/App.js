@@ -10,19 +10,28 @@ import './App.css';
 class App extends React.Component {
     state = {
       city: undefined,
-      max_temp: undefined,
-      min_temp: undefined,
+      maxTemp: undefined,
+      minTemp: undefined,
       humidity: undefined,
-      weather_state_abbr: undefined,
-      wind_speed: undefined,
+      weatherStateAbbr: undefined,
+      temp:undefined,
+      windSpeed: undefined,
       predictability: undefined,
-      error: undefined
+      showComponent: true,
+      result: false,
+      error: undefined,
+      id: undefined
     }
+
+    anotherCity = async(e) => {
+      e.preventDefault();
+      this.setState({showComponent: true, result: false })
+    }
+
     weather = async(e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
 
-    // console.log(response_woeid);
     if (city){
       let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
       let targetUrl = `https://www.metaweather.com/api/location/search/?query=${city}`
@@ -33,15 +42,24 @@ class App extends React.Component {
         let targetUrlWoeid = `https://www.metaweather.com/api/location/${woeid}`
         const api_call_woeid = await fetch(proxyUrl + targetUrlWoeid)
         const response_woeid = await api_call_woeid.json()
+        console.log("res",response_woeid)
         const weather_details = response_woeid.consolidated_weather[0]
+        const temp = Math.round(weather_details.the_temp)
+        const minTemp = Math.round(weather_details.min_temp)
+        const maxTemp = Math.round(weather_details.max_temp)
+        const windSpeed = Math.round(weather_details.wind_speed)
         this.setState({
           city: response_woeid.title,
-          max_temp: weather_details.max_temp,
-          min_temp: weather_details.min_temp,
+          maxTemp: maxTemp,
+          temp: temp,
+          minTemp: minTemp,
           humidity: weather_details.humidity,
-          weather_state_abbr: weather_details.weather_state_abbr,
-          wind_speed: weather_details.wind_speed,
+          weatherStateAbbr: weather_details.weather_state_abbr,
+          windSpeed: windSpeed,
           predictability: weather_details.predictability,
+          showComponent: false,
+          result: true,
+          id: weather_details.id,
           error: undefined
         })
       } else {
@@ -55,19 +73,28 @@ class App extends React.Component {
   }
 
   render() {
+    let className = 'background';
+    if (this.state.result) {
+      className ='background-result';
+    }
     return (
-        <div className="background">
-          <Titles />
-          <UserInput weather={this.weather} />
-          <Weather city={this.state.city}
-                   maxtemp={this.state.max_temp}
-                   mintemp={this.state.min_temp}
-                   humidity={this.state.humidity}
-                   weatherstateabbr={this.state.weather_state_abbr}
-                   windspeed={this.state.wind_speed}
-                   predictability={this.state.predictability}
-                   error={this.state.error}
-            />
+        <div className={className}>
+           { this.state.showComponent ? <Titles /> : null }
+           { this.state.showComponent ? <UserInput weather={this.weather} /> : null }
+           { this.state.result?    <Weather city={this.state.city}
+                                    temp={this.state.temp}
+                                    maxTemp={this.state.maxTemp}
+                                    minTemp={this.state.minTemp}
+                                    humidity={this.state.humidity}
+                                    weatherStateAbbr={this.state.weatherStateAbbr}
+                                    windSpeed={this.state.windSpeed}
+                                    predictability={this.state.predictability}
+                                    error={this.state.error}
+                                    anotherCity={this.anotherCity}
+                                    id={this.state.id}
+                                    /> : null }
+           { this.state.error? <div className="error">{this.state.error}</div> : null }
+
         </div>
     );
   }

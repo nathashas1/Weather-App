@@ -2,8 +2,10 @@ import React from 'react';
 const Form = ({weather}) => {
   return (
       <form onSubmit={weather}>
-        <input type="text" name="city" placeholder="City..." />
-        <button>Get Weather</button>
+        <div className="userInput">
+          <input className="input" type="text" name="city" placeholder="City..." />
+          <button className="submit">Get Weather</button>
+        </div>
       </form>
   )
 }
