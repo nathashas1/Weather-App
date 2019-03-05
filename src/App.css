@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.btn{
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-size: 20px;
+}
+
+.btn:hover{
+  background-color: #3BBCF9;
+  color: white;
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
 
 .background{
   background-image: url(./images/4.jpg);
@@ -18,38 +31,50 @@
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   background-size: 100%;
   justify-content: center;
   z-index: -1;
   align-items: center;
-  background-color: #28699E;
+  /* background-color: #4DB1DD; */
+  background-color: #216A9A;
+  padding: 20px;
+  padding-bottom: 30px;
+
+  /* background-image: url(./images/sky.png); */
 }
 
-.background-result-c{
-  background-image: url(./images/c.jpg);
+.oneSide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.weather-c{
+  background-image: url(./images/c.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
 
-.background-result-h{
-  background-image: url(./images/h.jpg);
+.weather-h{
+  background-image: url(./images/h.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
-.background-result-hc{
-  background-image: url(./images/hc.jpeg);
+.weather-hc{
+  background-image: url(./images/hc.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
-.background-result-hr{
-  background-image: url(./images/hr.jpg);
+.weather-hr{
+  background-image: url(./images/hr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -58,8 +83,8 @@
   background-size: 100%;
 }
 
-.background-result-lc{
-  background-image: url(./images/lc.png);
+.weather-lc{
+  background-image: url(./images/lc.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -69,7 +94,7 @@
 }
 
 
-.background-result-lr{
+.weather-lr{
   background-image: url(./images/lr.gif);
   background-repeat: no-repeat;
   width: 75px;
@@ -79,8 +104,8 @@
   background-size: 100%;
 }
 
-.background-result-sl{
-  background-image: url(./images/sl.jpeg);
+.weather-sl{
+  background-image: url(./images/sl.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -89,8 +114,8 @@
   background-size: 100%;
 }
 
-.background-result-sn{
-  background-image: url(./images/sn.jpg);
+.weather-sn{
+  background-image: url(./images/sn.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -99,7 +124,7 @@
   background-size: 100%;
 }
 
-.background-result-s{
+.weather-s{
   background-image: url(./images/lr.gif);
   background-repeat: no-repeat;
   width: 75px;
@@ -109,8 +134,8 @@
   background-size: 100%;
 }
 
-.background-result-t{
-  background-image: url(./images/t.jpeg);
+.weather-t{
+  background-image: url(./images/t.gif);
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
@@ -177,6 +202,7 @@ input::placeholder{
 }
 
 .submit2:hover {
+    /* background-color: #3BBCF9; */
     background-color: #2167A3;
     color: white;
     font-family: "Proxima", Arial, Helvetica, sans-serif;
@@ -217,8 +243,11 @@ input::placeholder{
 
 .result-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
 }
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;
