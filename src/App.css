@@ -10,14 +10,14 @@
 }
 
 .btn:hover{
-  background-color: #3BBCF9;
+  background-color: #2167A3;
   color: white;
   font-family: "Proxima", Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
 
 .background{
-  background-image: url(../images/4.jpg);
+  background-image: url(./images/4.jpg);
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
@@ -28,14 +28,13 @@
 }
 
 .background-result{
-  background-image: url(../images/11.jpg);
+  background-image: url(./images/11.jpg);
   background-repeat: no-repeat;
   height: 100vh;
-  background-size: 100%;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: -1;
   align-items: center;
 }
 
@@ -57,15 +56,14 @@
   background-image: url(../images/11.jpg);
 } */
 
-.oneSide{
+.weather{
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.weather-c{
-  background-image: url(../images/c.gif);
+/* .weather-c{
+  background-image: url(./images/c.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -73,14 +71,14 @@
 
 
 .weather-h{
-  background-image: url(../images/h.gif);
+  background-image: url(./images/h.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
 .weather-hc{
-  background-image: url(../images/hc.gif);
+  background-image: url(./images/hc.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -88,7 +86,7 @@
 
 .weather-hr{
 
-  background-image: url(../images/hr.gif);
+  background-image: url(./images/hr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -98,7 +96,7 @@
 }
 
 .weather-lc{
-  background-image: url(../images/lc.gif);
+  background-image: url(./images/lc.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -109,7 +107,7 @@
 
 
 .weather-lr{
-  background-image: url(../images/lr.gif);
+  background-image: url(./images/lr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -119,7 +117,7 @@
 }
 
 .weather-sl{
-  background-image: url(../images/sl.gif);
+  background-image: url(./images/sl.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -129,7 +127,7 @@
 }
 
 .weather-sn{
-  background-image: url(../images/sn.gif);
+  background-image: url(./images/sn.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -139,7 +137,7 @@
 }
 
 .weather-s{
-  background-image: url(../images/lr.gif);
+  background-image: url(./images/lr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -149,7 +147,7 @@
 }
 
 .weather-t{
-  background-image: url(../images/t.gif);
+  background-image: url(./images/t.gif);
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
@@ -158,7 +156,7 @@
   background-size: 100%;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .header{
   display: flex;
@@ -240,55 +238,27 @@ input::placeholder{
 .container{
   display: flex;
   height: 100%;
-  background-image: url(../images/images.jpeg);
+  background-image: url(./images/images.jpeg);
   background-repeat: no-repeat;
   background-size: 100%;
   justify-content: center;
   z-index: -1;
 }
 
-.weather{
+/* .weather{
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
+  align-items: center; */
+  /* margin-top: 50px; */
+/* } */
 
 .result-container{
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-around;
   height: 100%;
   width: 100%;
 }
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
