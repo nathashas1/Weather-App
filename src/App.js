@@ -51,7 +51,6 @@ class App extends React.Component {
               let targetUrlWoeid = `https://www.metaweather.com/api/location/${woeid}`
               const apiCallWoeid = await fetch(proxyUrl + targetUrlWoeid)
               const responseWoeid = await apiCallWoeid.json()
-              console.log("res",responseWoeid)
               const weatherDetails = responseWoeid.consolidated_weather[id]
               const temp = Math.round(weatherDetails.the_temp)
               const minTemp = Math.round(weatherDetails.min_temp)
