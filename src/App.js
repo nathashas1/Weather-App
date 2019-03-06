@@ -2,7 +2,7 @@ import React from 'react';
 import Titles from './components/title';
 import UserInput from './components/user_input';
 import Weather from './components/weather';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 
@@ -10,6 +10,8 @@ import './App.css';
 class App extends React.Component {
     state = {
       city: undefined,
+      day: undefined,
+      date: undefined,
       maxTemp: undefined,
       minTemp: undefined,
       humidity: undefined,
@@ -25,29 +27,20 @@ class App extends React.Component {
 
     anotherCity = async(e) => {
       e.preventDefault();
-      this.setState({showComponent: true, result: false })
+      this.setState({showComponent: true, result: false, city: undefined})
     }
 
     findDay(date){
       let arr = date.split("-")
       let d = new Date(parseInt(arr[0]),parseInt(arr[1])-1,parseInt(arr[2]))
-      let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+      let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
       let day = days[d.getDay()]
       return day
     }
 
-
-
     weather = id => async(e) => {
       e.preventDefault();
-      console.log("i",id)
-      let city;
-      if (id === 0){
-         city =   e.target.elements.city.value || this.state.city
-      }else{
-        city = this.state.city;
-      }
-
+      let city = this.state.city || e.target.elements.city.value;
       if (city){
         let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
         let targetUrl = `https://www.metaweather.com/api/location/search/?query=${city}`
@@ -56,28 +49,31 @@ class App extends React.Component {
         if (response.length > 0){
               const woeid = response[0].woeid
               let targetUrlWoeid = `https://www.metaweather.com/api/location/${woeid}`
-              const api_call_woeid = await fetch(proxyUrl + targetUrlWoeid)
-              const response_woeid = await api_call_woeid.json()
-              console.log("res",response_woeid)
-              const weather_details = response_woeid.consolidated_weather[id]
-              const temp = Math.round(weather_details.the_temp)
-              const minTemp = Math.round(weather_details.min_temp)
-              const maxTemp = Math.round(weather_details.max_temp)
-              const windSpeed = Math.round(weather_details.wind_speed)
+              const apiCallWoeid = await fetch(proxyUrl + targetUrlWoeid)
+              const responseWoeid = await apiCallWoeid.json()
+              console.log("res",responseWoeid)
+              const weatherDetails = responseWoeid.consolidated_weather[id]
+              const temp = Math.round(weatherDetails.the_temp)
+              const minTemp = Math.round(weatherDetails.min_temp)
+              const maxTemp = Math.round(weatherDetails.max_temp)
+              const windSpeed = Math.round(weatherDetails.wind_speed)
+              const day = this.findDay(weatherDetails.applicable_date)
+              const date = weatherDetails.applicable_date.split("-")[2]
               this.setState({
-                city: response_woeid.title,
-                responseWoeid: response_woeid.consolidated_weather,
-                date: weather_details.applicable_date,
+                city: responseWoeid.title,
+                responseWoeid: responseWoeid.consolidated_weather,
+                date: date,
+                day: day,
                 maxTemp: maxTemp,
                 temp: temp,
                 minTemp: minTemp,
-                humidity: weather_details.humidity,
-                weatherStateAbbr: weather_details.weather_state_abbr,
+                humidity: weatherDetails.humidity,
+                weatherStateAbbr: weatherDetails.weather_state_abbr,
                 windSpeed: windSpeed,
-                predictability: weather_details.predictability,
+                predictability: weatherDetails.predictability,
                 showComponent: false,
                 result: true,
-                id: weather_details.id,
+                id: weatherDetails.id,
                 error: undefined,
             })
           }else{
@@ -100,6 +96,7 @@ class App extends React.Component {
              { this.state.showComponent ? <UserInput weather={this.weather} /> : null }
              { this.state.result?    <Weather city={this.state.city}
                                       date={this.state.date}
+                                      day={this.state.day}
                                       temp={this.state.temp}
                                       maxTemp={this.state.maxTemp}
                                       minTemp={this.state.minTemp}
