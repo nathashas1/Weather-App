@@ -17,7 +17,7 @@
 }
 
 .background{
-  background-image: url(./images/4.jpg);
+  background-image: url(../images/4.jpg);
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
@@ -28,21 +28,34 @@
 }
 
 .background-result{
+  background-image: url(../images/11.jpg);
   background-repeat: no-repeat;
+  height: 100vh;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
-  background-size: 100%;
   justify-content: center;
   z-index: -1;
   align-items: center;
+}
+
+/*
+.background-result{
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-size: 100%;
+  justify-content: center;
+  z-index: -1;
+  align-items: center; */
   /* background-color: #4DB1DD; */
-  background-color: #216A9A;
-  padding: 20px;
+  /* background-color: #216A9A; */
+  /* padding: 20px;
   padding-bottom: 30px;
 
-  /* background-image: url(./images/sky.png); */
-}
+  background-image: url(../images/11.jpg);
+} */
 
 .oneSide{
   display: flex;
@@ -52,7 +65,7 @@
 }
 
 .weather-c{
-  background-image: url(./images/c.gif);
+  background-image: url(../images/c.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -60,21 +73,22 @@
 
 
 .weather-h{
-  background-image: url(./images/h.gif);
+  background-image: url(../images/h.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
 .weather-hc{
-  background-image: url(./images/hc.gif);
+  background-image: url(../images/hc.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
 }
 
 .weather-hr{
-  background-image: url(./images/hr.gif);
+
+  background-image: url(../images/hr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -84,7 +98,7 @@
 }
 
 .weather-lc{
-  background-image: url(./images/lc.gif);
+  background-image: url(../images/lc.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -95,7 +109,7 @@
 
 
 .weather-lr{
-  background-image: url(./images/lr.gif);
+  background-image: url(../images/lr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -105,7 +119,7 @@
 }
 
 .weather-sl{
-  background-image: url(./images/sl.gif);
+  background-image: url(../images/sl.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -115,7 +129,7 @@
 }
 
 .weather-sn{
-  background-image: url(./images/sn.gif);
+  background-image: url(../images/sn.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -125,7 +139,7 @@
 }
 
 .weather-s{
-  background-image: url(./images/lr.gif);
+  background-image: url(../images/lr.gif);
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
@@ -135,7 +149,7 @@
 }
 
 .weather-t{
-  background-image: url(./images/t.gif);
+  background-image: url(../images/t.gif);
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
@@ -226,7 +240,7 @@ input::placeholder{
 .container{
   display: flex;
   height: 100%;
-  background-image: url(./images/images.jpeg);
+  background-image: url(../images/images.jpeg);
   background-repeat: no-repeat;
   background-size: 100%;
   justify-content: center;

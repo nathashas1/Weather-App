@@ -3,7 +3,7 @@ import Titles from './components/title';
 import UserInput from './components/user_input';
 import Weather from './components/weather';
 // import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
 //
 
 
@@ -49,7 +49,7 @@ class App extends React.Component {
     console.log("i",id)
     let city;
     if (id === 0){
-      city = e.target.elements.city.value
+      city =   e.target.elements.city.value || this.state.city
     } else {
       city = this.state.city;
     }
