@@ -1,5 +1,5 @@
 
-* [Weather App Live](https://nathasha.herokuapp.com/)
+* [Weather App Live](https://cityweatherinfo.herokuapp.com/)
 
 ##  Setup
 * Clone the repo
